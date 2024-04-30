@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mulah - Page 1: Check Loyalty Points</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Mulah</h1>
+        <p class="welcome">Hello, Welcome!</p>
+        <h2>Check Loyalty Points & Rewards</h2>
+        <form action="page2.html">
+            
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{11}" value="+60" placeholder="Enter Phone Number" required>
+            <button type="submit">Check Loyalty Points</button>
+        </form>
+    </div>
+
+    <script>
+        // Allow only numerical inputs for phone number
+        document.getElementById('phone').addEventListener('input', function(e) {
+            const regex = /[0-9]/g;
+            if (!regex.test(e.data)) {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            }
+        });
+    </script>
+</body>
+</html>
