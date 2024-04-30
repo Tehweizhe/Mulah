@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mulah - Page 2: Enter Personal Information</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Mulah</h1>
+        <p class="welcome">Registration</p>
+        <h3>Please fill up your details</h3>
+        <form action="page3.html">
+            <label for="name"> Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Enter Name">
+            <label for="birthday">Birthday:</label>
+            <input type="date" id="birthday" name="birthday" required>
+            <label for="email"></label>Email :</label>
+            <input type="email" id="email" name="email" required placeholder="Email Address">
+            <button type="submit">Continue</button>
+        </form>
+    </div>
+
+    <script>
+        // Allow only alphabetical characters for name
+        document.getElementById('name').addEventListener('input', function(e) {
+            const regex = /[a-zA-Z]/g;
+            if (!regex.test(e.data)) {
+                this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+            }
+        });
+    </script>
+</body>
+</html>
